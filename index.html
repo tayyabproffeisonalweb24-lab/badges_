@@ -1,0 +1,278 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Luxury Div Components</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #080d18;
+    color: #f5f7fc;
+    padding: 45px 20px;
+}
+
+.container {
+    max-width: 1100px;
+    margin: auto;
+}
+
+.heading {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.heading p {
+    color: #d6b77c;
+    font-size: 12px;
+    letter-spacing: 3px;
+    margin-bottom: 15px;
+}
+
+.heading h1 {
+    font-size: clamp(28px, 5vw, 45px);
+    margin-bottom: 15px;
+}
+
+.heading h1 span {
+    color: #d6b77c;
+}
+
+.heading .description {
+    color: #9ba8bb;
+    line-height: 1.8;
+    font-size: 14px;
+}
+
+/* SIX SEPARATE DIV BOXES */
+.div-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+}
+
+.div-box {
+    min-height: 235px;
+    padding: 28px;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(145deg, #162238, #0e1625);
+    border: 1px solid #293a52;
+    border-radius: 18px;
+    transition: transform .3s ease,
+                border-color .3s ease,
+                box-shadow .3s ease;
+}
+
+.div-box::after {
+    content: "";
+    position: absolute;
+    top: -55px;
+    right: -55px;
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    background: var(--accent);
+    opacity: .12;
+    filter: blur(35px);
+    pointer-events: none;
+}
+
+.div-box:hover {
+    transform: translateY(-8px);
+    border-color: var(--accent);
+    box-shadow: 0 18px 38px rgba(0,0,0,.3);
+}
+
+.icon {
+    width: 52px;
+    height: 52px;
+    display: grid;
+    place-items: center;
+    margin-bottom: 23px;
+    border-radius: 14px;
+    border: 1px solid color-mix(in srgb, var(--accent) 40%, transparent);
+    background: color-mix(in srgb, var(--accent) 10%, #101725);
+    color: var(--accent);
+    font-size: 25px;
+}
+
+.div-box h2 {
+    font-size: 19px;
+    margin-bottom: 12px;
+}
+
+.div-box p {
+    color: #9ba8bb;
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+.div-box .number {
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    color: #607087;
+    font-size: 12px;
+}
+
+/* Different accent colors */
+.box-1 { --accent: #d6b77c; }
+.box-2 { --accent: #63a8ff; }
+.box-3 { --accent: #55d6be; }
+.box-4 { --accent: #bd9aff; }
+.box-5 { --accent: #ff9f80; }
+.box-6 { --accent: #f1d36b; }
+
+/* BOTTOM BUTTON */
+.bottom {
+    text-align: center;
+    margin-top: 35px;
+}
+
+.bottom button {
+    padding: 14px 24px;
+    color: #101725;
+    background: #d6b77c;
+    border: 1px solid #d6b77c;
+    border-radius: 9px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: .25s;
+}
+
+.bottom button:hover {
+    color: #d6b77c;
+    background: transparent;
+}
+
+#notice {
+    color: #d6b77c;
+    margin-top: 15px;
+    font-size: 13px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 800px) {
+    .div-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 520px) {
+    body {
+        padding: 30px 15px;
+    }
+
+    .div-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .div-box {
+        min-height: 205px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        transition: none !important;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<main class="container">
+
+    <header class="heading">
+        <p>✦ PREMIUM COMPONENTS ✦</p>
+        <h1>Modern <span>DIV Collection</span></h1>
+        <p class="description">
+            Six individual containers for professional websites.
+            Responsive layouts with premium colors and smooth hover effects.
+        </p>
+    </header>
+
+    <section class="div-grid">
+
+        <div class="div-box box-1">
+            <span class="number">01</span>
+            <div class="icon">✧</div>
+            <h2>Luxury Design</h2>
+            <p>Elegant layouts with refined colors, premium borders and sophisticated visual details.</p>
+        </div>
+
+        <div class="div-box box-2">
+            <span class="number">02</span>
+            <div class="icon">⌘</div>
+            <h2>Technology</h2>
+            <p>Modern interface components for SaaS platforms, dashboards and technology websites.</p>
+        </div>
+
+        <div class="div-box box-3">
+            <span class="number">03</span>
+            <div class="icon">◈</div>
+            <h2>Performance</h2>
+            <p>Lightweight components with smooth transitions and clean CSS styling.</p>
+        </div>
+
+        <div class="div-box box-4">
+            <span class="number">04</span>
+            <div class="icon">✳</div>
+            <h2>Creative Ideas</h2>
+            <p>Flexible content boxes that make your portfolio and creative projects stand out.</p>
+        </div>
+
+        <div class="div-box box-5">
+            <span class="number">05</span>
+            <div class="icon">⬡</div>
+            <h2>Smart Solutions</h2>
+            <p>Organize services, products and important information in separate sections.</p>
+        </div>
+
+        <div class="div-box box-6">
+            <span class="number">06</span>
+            <div class="icon">★</div>
+            <h2>Premium Quality</h2>
+            <p>Responsive containers designed to look polished on desktops, tablets and mobiles.</p>
+        </div>
+
+    </section>
+
+    <div class="bottom">
+        <button id="demoBtn">Explore Components →</button>
+        <p id="notice" aria-live="polite"></p>
+    </div>
+
+</main>
+
+<script>
+const demoBtn = document.getElementById("demoBtn");
+const notice = document.getElementById("notice");
+
+demoBtn.addEventListener("click", function () {
+    const boxes = document.querySelectorAll(".div-box");
+
+    boxes.forEach(function (box) {
+        box.style.outline = "1px solid #d6b77c";
+
+        setTimeout(function () {
+            box.style.outline = "";
+        }, 900);
+    });
+
+    notice.textContent = "All 6 DIV components are ready to customize!";
+});
+</script>
+
+</body>
+</html>
